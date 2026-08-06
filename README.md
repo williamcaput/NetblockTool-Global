@@ -53,21 +53,21 @@ python -m pip install -e '.[dev]'
 Search all registries:
 
 ```bash
-netblocktool -v "MUFG Bank"
+netblocktool -v "company"
 ```
 
 Search selected registries:
 
 ```bash
-netblocktool "Mitsubishi UFJ" --registry apnic --registry lacnic
-netblocktool "Example Africa" --registry afrinic
+netblocktool "company" --registry apnic --registry lacnic
+netblocktool "company" --registry afrinic
 ```
 
 Export results:
 
 ```bash
-netblocktool "MUFG" --format csv --output mufg.csv --threshold 50
-netblocktool "MUFG" --format json --output mufg.json
+netblocktool "MUFG" --format csv --output company.csv --threshold 50
+netblocktool "MUFG" --format json --output company.json
 ```
 
 Filter by address family:
@@ -80,7 +80,7 @@ netblocktool "Example Corp" -6
 Run without installing:
 
 ```bash
-PYTHONPATH=src python -m netblocktool -v "MUFG Bank"
+PYTHONPATH=src python -m netblocktool -v "company"
 ```
 
 ## Command reference
