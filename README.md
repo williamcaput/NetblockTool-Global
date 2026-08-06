@@ -34,7 +34,7 @@ RIPEstat is used only to enrich ASNs already matched through a registry. It does
 ### From source
 
 ```bash
-git clone https://github.com/YOUR-ORG/NetblockTool.git
+git clone https://github.com/williamcaput/NetblockTool.git
 cd NetblockTool
 python3 -m venv .venv
 source .venv/bin/activate
