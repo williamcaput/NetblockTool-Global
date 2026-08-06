@@ -23,20 +23,18 @@ NetblockTool discovers and ranks IP netblocks associated with an organization ac
 |---|---|---|
 | ARIN | Whois-RWS JSON | Organization → networks and ASNs |
 | RIPE NCC | RIPE Database REST JSON | Organization inverse lookup and ASN prefixes |
-| APNIC | Bounded public Whois | Organization-name discovery, inverse `org` expansion, network descriptions, and ASN prefixes |
+| APNIC | Bounded public Whois | Network and ASN objects |
 | LACNIC | Bounded public Whois | Owner and assigned IPv4/IPv6 resources |
 | AFRINIC | Bounded public Whois | Organization inverse lookup and ASN prefixes |
 
 RIPEstat is used only to enrich ASNs already matched through a registry. It does not establish registry ownership by itself.
-
-APNIC searches include `organisation` objects. A human-readable `org-name` match is expanded through the organization handle, and `descr` values are retained as organization evidence when a resource uses an abbreviated netname. For example, `Bank of Ayudhya` can resolve resources registered under `BAY-TH`.
 
 ## Installation
 
 ### From source
 
 ```bash
-git clone https://github.com/YOUR-ORG/NetblockTool.git
+git clone https://github.com/williamcaput/NetblockTool.git
 cd NetblockTool
 python3 -m venv .venv
 source .venv/bin/activate
@@ -55,21 +53,21 @@ python -m pip install -e '.[dev]'
 Search all registries:
 
 ```bash
-netblocktool -v "MUFG Bank"
+netblocktool -v "company"
 ```
 
 Search selected registries:
 
 ```bash
-netblocktool "Mitsubishi UFJ" --registry apnic --registry lacnic
-netblocktool "Example Africa" --registry afrinic
+netblocktool "company" --registry apnic --registry lacnic
+netblocktool "company" --registry afrinic
 ```
 
 Export results:
 
 ```bash
-netblocktool "MUFG" --format csv --output mufg.csv --threshold 50
-netblocktool "MUFG" --format json --output mufg.json
+netblocktool "company" --format csv --output company.csv --threshold 50
+netblocktool "company" --format json --output company.json
 ```
 
 Filter by address family:
@@ -82,7 +80,7 @@ netblocktool "Example Corp" -6
 Run without installing:
 
 ```bash
-PYTHONPATH=src python -m netblocktool -v "MUFG Bank"
+PYTHONPATH=src python -m netblocktool -v "company"
 ```
 
 ## Command reference
