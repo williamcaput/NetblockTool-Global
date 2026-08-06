@@ -18,3 +18,13 @@
 ## 3.0.0
 
 - Initial clean rewrite with ARIN Whois-RWS and RIPEstat support.
+
+## 4.0.1 - 2026-08-06
+
+### Fixed
+- APNIC company-name searches now include `organisation` objects and expand their
+  `org` handles into related IPv4, IPv6, and ASN records.
+- APNIC result naming now prefers human-readable `org-name` and `descr` values
+  over abbreviated `netname` identifiers when available.
+- Queries such as `Bank of Ayudhya` can now resolve resources registered under
+  identifiers such as `BAY-TH` and `ORG-BOAP1-AP`.
