@@ -66,8 +66,8 @@ netblocktool "company" --registry afrinic
 Export results:
 
 ```bash
-netblocktool "MUFG" --format csv --output company.csv --threshold 50
-netblocktool "MUFG" --format json --output company.json
+netblocktool "company" --format csv --output company.csv --threshold 50
+netblocktool "company" --format json --output company.json
 ```
 
 Filter by address family:
